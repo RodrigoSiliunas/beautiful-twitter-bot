@@ -1,3 +1,4 @@
+import os
 import requests
 from time import sleep
 from src.modules.PostMessage import PostService
@@ -6,8 +7,8 @@ if __name__ == '__main__':
     print('Twitter BOT Online! A primeira postagem será feita em um minuto.')
     sleep(60)
 
-    url = 'https://api.thingspeak.com/apps/thingtweet/1/statuses/update'
-    key = 'Z4FLI4G8R5KLMORY'
+    url = os.environ.get('THING_URL')
+    key = os.environ.get('THING_KEY')
     twitter = PostService(url, key)
 
     while True:
