@@ -17,7 +17,7 @@ if __name__ == '__main__':
             poem = requests.get('http://beautiful-pyems.herokuapp.com/randoms').json()
 
         twitter.post_message(
-            f'Título: { poem["title"] };\nAutor: { poem["author"] }\n\n{ poem["content"] }'
+            f'Título: { poem["title"] };\nAutor: { poem["author"] };\n\n{ poem["content"] }'
         )
         print("Mensagem postada!")
 
